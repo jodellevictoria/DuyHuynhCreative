@@ -1,6 +1,7 @@
 <script setup lang="ts">
 /**
  * TODO: Add Widget to turn on sound of Demo Reel
+ * add video controls
  */
 </script>
 
@@ -9,7 +10,6 @@
     <video autoplay muted loop id="myVideo">
       <source src="/src/assets/DemoReel.mp4" type="video/mp4" />
     </video>
-    
   </div>
 </template>
 
@@ -23,7 +23,8 @@
   }
 }
 #reel {
-  animation: fadeInAnimation ease 3s;
+  background-color: black;
+  animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   z-index: 0;
