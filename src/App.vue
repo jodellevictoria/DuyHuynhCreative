@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import Nav from '@/components/Nav.vue';
+import { RouterLink, RouterView } from 'vue-router'
+import Nav from '@/components/Nav.vue'
 </script>
 
 <template>
@@ -11,8 +11,8 @@ import Nav from '@/components/Nav.vue';
 </template>
 
 <style scoped>
-v-app{
-  display:flex;
+v-app {
+  display: flex;
   flex-direction: column;
 }
 </style>

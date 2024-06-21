@@ -1,44 +1,48 @@
 <template>
-    <div class="navigator">
-        <span>
-            <b>Duy Huynh</b>
-        </span>
-        <div class="v-tabs-bar">
-            <button class="dropbtn">
-                <RouterLink to="/">Home</RouterLink>
-            </button>
-            <div class="dropdown">
-                <button class="dropbtn">Projects
-                </button>
-                <div class="dropdown-content">
-                <RouterLink>Sports</RouterLink>
-                <RouterLink>Aviation</RouterLink>
-                <RouterLink>Commercial</RouterLink>
-                </div>
-            </div>
-            <button class="dropbtn">
-                <RouterLink to="/contact">Contact</RouterLink>
-            </button>
-                
+  <div class="navigator">
+    <span>
+      <b>Duy Huynh</b>
+    </span>
+    <div class="v-tabs-bar">
+      <button class="dropbtn">
+        <RouterLink to="/">Home</RouterLink>
+      </button>
+      <div class="dropdown">
+        <button class="dropbtn"><RouterLink to="/projects">Projects</RouterLink></button>
+        <div class="dropdown-content">
+          <RouterLink to="/projects" v-scroll-to="'#sports'">Sports</RouterLink>
+          <RouterLink to="/projects" v-scroll-to="'#products'">Products</RouterLink>
+          <RouterLink to="/projects" v-scroll-to="'#brandings'">Brand Content</RouterLink>
         </div>
+      </div>
+      <button class="dropbtn">
+        <RouterLink to="/about">About</RouterLink>
+      </button>
+      <button class="dropbtn">
+        <RouterLink to="/contact">Contact</RouterLink>
+      </button>
     </div>
+  </div>
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
+/**
+ * TODO: Mobile Nav & Stick Nav while Scroll
+ */
+import { RouterLink } from 'vue-router'
 
-    export default {
-        data: () => ({}),
-    };
+export default {
+  data: () => ({})
+}
 </script>
 <style>
-.navigator{
-    top:0;
-    width: 100%;
-    background:black;
-    padding:20px 40px 20px 40px;
-    color:white;
-    z-index: 1;
+.navigator {
+  top: 0;
+  width: 100%;
+  background: black;
+  padding: 20px 40px 20px 40px;
+  color: white;
+  z-index: 1;
 }
 
 /* Links inside the navbar */
@@ -58,49 +62,50 @@ import { RouterLink } from 'vue-router';
   margin: 0; /* Important for vertical align on mobile phones */
 }
 
-.v-tabs-bar{
-    float: right !important;
-    display: flex;
-    gap:40px;
+.v-tabs-bar {
+  float: right !important;
+  display: flex;
+  gap: 40px;
 }
 
 .tabs {
-    display: flex;
-    gap:40px;
+  display: flex;
+  gap: 40px;
 }
 
-.v-tab{
-    text-transform: none !important;
+.v-tab {
+  text-transform: none !important;
 }
 
 /* The dropdown container */
 .dropdown {
+  margin-top: 5px;
   float: left;
   overflow: hidden;
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  padding-top:10px;
+  padding-top: 10px;
   display: none;
   position: absolute;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   animation: growDown 500ms ease-in-out forwards;
   transform-origin: top center;
 }
 
 @keyframes growDown {
-    0% {
-        transform: scaleY(0)
-    }
-    80% {
-        transform: scaleY(1.1)
-    }
-    100% {
-        transform: scaleY(1)
-    }
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 /* Links inside the dropdown */
@@ -116,8 +121,7 @@ import { RouterLink } from 'vue-router';
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
-
 </style>
