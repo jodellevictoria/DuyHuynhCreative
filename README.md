@@ -1,6 +1,6 @@
 # DuyHuynh_website
 
-This template should help get you started developing with Vue 3 in Vite.
+Portfolio Website for Video Content
 
 ## Recommended IDE Setup
 
