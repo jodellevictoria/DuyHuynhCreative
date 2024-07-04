@@ -8,7 +8,10 @@
 <template>
   <div class="vignette" id="reel">
     <video autoplay muted loop id="myVideo">
-      <source src="/src/assets/DemoReel.mp4" type="video/mp4" />
+      <source
+        src="https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/DemoReel.mp4?alt=media&token=5e322a23-a1a3-4b13-b1a6-3d6b6ed09a2d"
+        type="video/mp4"
+      />
     </video>
   </div>
 </template>

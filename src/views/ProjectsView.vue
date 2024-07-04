@@ -50,118 +50,120 @@
     <div id="sports" class="project_type">
       <h2>Sports</h2>
       <div class="video_grid">
-        <div>
+        <div v-for="(video, index) in sports_videos" v-bind:key="index">
           <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source
-              src="/src/assets/sports/180829-MLS-FEA-OSO RE-SIGN v3 (2020_09_29 00_42_32 UTC).mp4"
-              type="video/mp4"
-            />
+            <source :src="video.link" type="video/mp4" />
           </video>
-          <span>MLS Osorio Contract Extension</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source src="/src/assets/sports/220516-TORvsDAL Narrative Spot.mp4" type="video/mp4" />
-          </video>
-          <span>Toronto Arrows</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source src="/src/assets/sports/NBA-TWT-190520-RAPTORS TAILGATE.mp4" type="video/mp4" />
-          </video>
-          <span>Toronto Raptors Tailgate</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source src="/src/assets/sports/240606 - CCYAA_CC_Hilites.mp4" type="video/mp4" />
-          </video>
-          <span>CCYAA Celebrity Classic 2023</span>
+          <span>{{ video.name }}</span>
         </div>
       </div>
     </div>
     <div id="products" class="project_type">
       <h2>Products</h2>
       <div class="video_grid">
-        <div>
+        <div v-for="(video, index) in product_videos" v-bind:key="index">
           <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source src="/src/assets/products/1080_30s_Sapporo Spot v2.mp4" type="video/mp4" />
+            <source :src="video.link" type="video/mp4" />
           </video>
-          <span>Sapporo Spot</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source src="/src/assets/products/1080_30s_Whiskey Spot.mp4" type="video/mp4" />
-          </video>
-          <span>Whiskey Spot</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source
-              src="/src/assets/products/200507-KNU-WEB-Free Shipping 30 SEC Spot B TITLE.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <span>Knurling Dental</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source
-              src="/src/assets/products/230720-16x9 Summer Travel Drinks v10 EN.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <span>Air Canada - Summer Travel Drinks</span>
+          <span>{{ video.name }}</span>
         </div>
       </div>
     </div>
     <div id="branding" class="project_type">
       <h2>Brand Content</h2>
       <div class="video_grid">
-        <div>
+        <div v-for="(video, index) in branding_videos" v-bind:key="index">
           <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source
-              src="/src/assets/branding/230725-EN169-Free Wifi Concept v5 ONB.mp4"
-              type="video/mp4"
-            />
+            <source :src="video.link" type="video/mp4" />
           </video>
-          <span>Air Canada Free Wifi</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source
-              src="/src/assets/branding/Air Canada Celebrating Disney and Pixar’s new film, Turning Red.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <span>Air Canada X Disney & Pixar's film, Turning Red</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source src="/src/assets/branding/TEAS-BHM 1st Piece v6 EN.mp4" type="video/mp4" />
-          </video>
-          <span>Air Canada: To the next generation in aviation</span>
-        </div>
-        <div>
-          <video muted loop onmouseover="this.play()" onmouseout="this.pause()" class="grayscale">
-            <source
-              src="/src/assets/branding/230328-Rosemary Flight Sim S+D v3.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <span>Air Canada Black History Month</span>
+          <span>{{ video.name }}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 /**
  *
  * TODO: Start Mobile
  *
  * Fade in from 1 2 3
  */
+
+const sports_videos = [
+  {
+    name: 'MLS Osorio Contract Extension',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2F180829-MLS-FEA-OSO%20RE-SIGN%20v3%20(2020_09_29%2000_42_32%20UTC).mp4?alt=media&token=a948555a-854c-4512-ad8b-5aa7987c8870',
+    roles: ['', '']
+  },
+  {
+    name: 'Toronto Arrows',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2F220516-TORvsDAL%20Narrative%20Spot.mp4?alt=media&token=cb729d4e-bbc0-4c78-af9b-674d86f83485',
+    roles: ['', '']
+  },
+  {
+    name: 'Toronto Raptors Tailgate',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2FNBA-TWT-190520-RAPTORS%20TAILGATE.mp4?alt=media&token=d94a340c-6dcd-4ac8-9bed-800310c45a50',
+    roles: ['', '']
+  },
+  {
+    name: 'CCYAA Celebrity Classic 2023',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2F240606%20-%20CCYAA_CC_Hilites.mp4?alt=media&token=adbc3a20-6467-4573-a7c8-1db83d08b44a',
+    roles: ['', '']
+  }
+]
+
+const product_videos = [
+  {
+    name: 'Sapporo Spot',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/product%2F1080_30s_Sapporo%20Spot%20v2.mp4?alt=media&token=f5f14096-1cce-4585-9715-82daeb4dfd38',
+    roles: ['', '']
+  },
+  {
+    name: 'Whiskey Spot',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/product%2F1080_30s_Whiskey%20Spot.mp4?alt=media&token=674529ca-e225-441b-9ab7-e4a2f1d20b93',
+    roles: ['', '']
+  },
+  {
+    name: 'Knurling Dental',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/product%2F200507-KNU-WEB-Free%20Shipping%2030%20SEC%20Spot%20B%20TITLE.mp4?alt=media&token=cbd34609-9750-43e5-95b2-649ddf7a23b7',
+    roles: ['', '']
+  },
+  {
+    name: 'Air Canada - Summer Travel Drinks',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/product%2F230720-16x9%20Summer%20Travel%20Drinks%20v10%20EN.mp4?alt=media&token=62def7be-2f95-4f8f-9a53-3dee9e3eda9c',
+    roles: ['', '']
+  }
+]
+
+const branding_videos = [
+  {
+    name: 'Air Canada Free Wifi',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/branding%2F230725-EN169-Free%20Wifi%20Concept%20v5%20ONB.mp4?alt=media&token=410bac4a-2839-43b8-9c58-2b360959ad75',
+    roles: ['', '']
+  },
+  {
+    name: "Air Canada X Disney & Pixar's film, Turning Red",
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/branding%2FAir%20Canada%20Celebrating%20Disney%20and%20Pixar%E2%80%99s%20new%20film%2C%20Turning%20Red.mp4?alt=media&token=6954555f-864a-4fb2-888c-473a277fa152',
+    roles: ['', '']
+  },
+  {
+    name: 'Air Canada: To the next generation in aviation',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/branding%2F230328-Rosemary%20Flight%20Sim%20S%2BD%20v3.mp4?alt=media&token=92854419-b44a-4dcb-9ad6-4a500c50f0e5',
+    roles: ['', '']
+  },
+  {
+    name: "Air Canada: Zoey's Story",
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/branding%2F231107-Zoeys%20Story%20v15.2%20EN.mp4?alt=media&token=5d0a6167-7cc0-4534-8fdb-3c6081a79c63',
+    roles: ['', '']
+  },
+  {
+    name: 'Air Canada Black History Month',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/branding%2FTEAS-BHM%201st%20Piece%20v6%20EN.mp4?alt=media&token=d6e89776-d66b-4a45-88c8-5e35f2b45dd5',
+    roles: ['', '']
+  }
+]
 </script>
 
 <style>
