@@ -1,7 +1,7 @@
 <template>
   <div class="navigator">
     <span>
-      <b>Duy Huynh</b>
+      <b><RouterLink to="/">Duy Huynh</RouterLink></b>
     </span>
     <div class="v-tabs-bar">
       <button class="dropbtn">
@@ -37,6 +37,8 @@ export default {
 </script>
 <style>
 .navigator {
+  position: fixed;
+
   top: 0;
   width: 100%;
   background: black;
@@ -51,6 +53,10 @@ export default {
   color: white;
   text-align: center;
   text-decoration: none;
+}
+
+.navigator a:hover {
+  font-weight: bold;
 }
 
 .dropbtn {
