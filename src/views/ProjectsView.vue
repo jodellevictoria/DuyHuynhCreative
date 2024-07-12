@@ -38,55 +38,48 @@
       </video> -->
     </div>
     <div class="projects">
-      <div id="projects_intro">
-        <section id="sports_link">
-          <a href="#sports">
-            <video
-              id="sports_bg"
-              muted
-              loop
-              onmouseover="this.play()"
-              onmouseout="this.pause()"
-              class="grayscale"
-            >
-              <source src="/src/assets/SportsBGAnim.mov" type="video/mp4" />
-            </video>
-
-            <span class="heading">SPORTS</span>
-          </a>
-        </section>
-        <section id="products_link">
-          <a href="#products">
-            <video
-              id="products_bg"
-              muted
-              loop
-              onmouseover="this.play()"
-              onmouseout="this.pause()"
-              class="grayscale"
-            >
-              <source src="/src/assets/ProductBGAnim.mov" type="video/mp4" />
-            </video>
-            <span class="heading">PRODUCTS</span>
-          </a>
-        </section>
-        <section id="brandings_link">
-          <a href="#branding">
-            <video
-              id="brandings_bg"
-              muted
-              loop
-              onmouseover="this.play()"
-              onmouseout="this.pause()"
-              class="grayscale"
-            >
-              <source src="/src/assets/Branding_BG.mov" type="video/mp4" />
-            </video>
-            <span class="heading">BRAND CONTENT</span>
-          </a>
-        </section>
+      <div class="full-width-container">
+        <div class="inner-div" @click="this.$refs.sports.scrollIntoView({ behavior: 'smooth' })">
+          <video
+            id="sports_bg"
+            muted
+            loop
+            onmouseover="this.play()"
+            onmouseout="this.pause()"
+            class="grayscale"
+          >
+            <source src="/src/assets/SportsBGAnim.mov" type="video/mp4" />
+          </video>
+          <div class="text">SPORTS</div>
+        </div>
+        <div class="inner-div" @click="this.$refs.products.scrollIntoView({ behavior: 'smooth' })">
+          <video
+            id="sports_bg"
+            muted
+            loop
+            onmouseover="this.play()"
+            onmouseout="this.pause()"
+            class="grayscale"
+          >
+            <source src="/src/assets/ProductBGAnim.mov" type="video/mp4" />
+          </video>
+          <div class="text">PRODUCTS</div>
+        </div>
+        <div class="inner-div" @click="this.$refs.branding.scrollIntoView({ behavior: 'smooth' })">
+          <video
+            id="sports_bg"
+            muted
+            loop
+            onmouseover="this.play()"
+            onmouseout="this.pause()"
+            class="grayscale"
+          >
+            <source src="/src/assets/BrandingBGAnim.mov" type="video/mp4" />
+          </video>
+          <div class="text">BRAND CONTENT</div>
+        </div>
       </div>
-      <div id="sports" class="project_type">
+      <div id="sports" ref="sports" class="project_type">
         <h2>Sports</h2>
         <div class="video_grid">
           <div
@@ -103,7 +96,7 @@
           </div>
         </div>
       </div>
-      <div id="products" class="project_type">
+      <div id="products" ref="products" class="project_type">
         <h2>Products</h2>
         <div class="video_grid">
           <div
@@ -120,7 +113,7 @@
           </div>
         </div>
       </div>
-      <div id="branding" class="project_type">
+      <div id="branding" ref="branding" class="project_type">
         <h2>Brand Content</h2>
         <div class="video_grid">
           <div
@@ -268,36 +261,27 @@ const branding_videos = [
 </script>
 
 <style>
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.projects {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.full-width-container {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  top: 64px;
-  background-color: black;
-  max-width: 100% !important;
-  display: grid;
-  grid-template-rows: auto auto auto auto;
+  display: flex;
+  max-width: 100vw;
+  height: 100vh; /* Full viewport height */
+  /*justify-content: space-around;*/
+  align-items: center;
 }
 
-#projects_intro {
-  max-width: 100% !important;
-  min-height: 800px;
-  display: grid;
-  grid-template-columns: 32.5vw 32.5vw 32.5vw;
-}
-
-section {
-  width: 33%;
+.inner-div {
+  position: relative;
+  width: 33.33%;
   height: 100%;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 
   .grayscale {
     filter: grayscale(0.25);
@@ -313,33 +297,44 @@ section {
     -webkit-filter: grayscale(0);
     filter: grayscale(0%);
   }
-
-  video {
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-  }
-
-  .heading {
-    background: transparent;
-    position: absolute;
-    width: 400px;
-    height: 20px;
-    margin-top: 20%;
-    margin-bottom: 20%;
-    z-index: 2;
-    font-weight: bold;
-    color: white;
-
-    transform: rotate(-90deg);
-    font-size: 40px;
-  }
 }
 
-.section:hover {
-  transform: scale(1.2);
+.inner-div:hover {
+  cursor: pointer;
 }
 
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.inner-div:hover .background-video {
+  opacity: 1;
+}
+
+.text {
+  position: absolute;
+  z-index: 1;
+  font-size: 60px;
+  color: white;
+  font-family: Deuterium;
+  font-weight: 500;
+  writing-mode: vertical-lr;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .project_type {
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
@@ -356,7 +351,8 @@ section {
 
   h2 {
     font-size: 70px;
-    font-weight: bold;
+    font-weight: 500;
+    font-family: Deuterium;
   }
 
   .video_grid {
@@ -383,6 +379,10 @@ section {
         -webkit-filter: grayscale(0.4);
         filter: grayscale(40%);
         transition: all 1s ease;
+      }
+
+      .project_title {
+        font-family: 'Manrope';
       }
     }
 

@@ -1,3 +1,83 @@
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-Black.otf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-ExtraBold.otf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-ExtraLight.otf');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-Heavy.otf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-Medium.otf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-Thin.otf');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium';
+  src: url('./Fonts/Deuterium-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deuterium UltraHeavy';
+  src: url('./Fonts/Deuterium-UltraHeavy.otf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --vt-c-white: #ffffff;

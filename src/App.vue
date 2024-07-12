@@ -7,7 +7,7 @@ import Nav from '@/components/Nav.vue'
   <v-app>
     <Nav />
   </v-app>
-  <RouterView />
+  <RouterView style="margin-top: 70px" />
 </template>
 
 <style scoped>

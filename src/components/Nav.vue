@@ -5,7 +5,7 @@
     </span>
     <div class="v-tabs-bar">
       <button class="dropbtn">
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/#reel">Home</RouterLink>
       </button>
       <div class="dropdown">
         <button class="dropbtn"><RouterLink to="/projects">Projects</RouterLink></button>
@@ -16,9 +16,6 @@
         </div>
       </div>
       <button class="dropbtn">
-        <RouterLink to="/about">About</RouterLink>
-      </button>
-      <button class="dropbtn">
         <RouterLink to="/contact">Contact</RouterLink>
       </button>
     </div>
@@ -26,9 +23,6 @@
 </template>
 
 <script>
-/**
- * TODO: Mobile Nav & Stick Nav while Scroll
- */
 import { RouterLink } from 'vue-router'
 
 export default {
@@ -36,7 +30,10 @@ export default {
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 .navigator {
+  font-family: 'Manrope';
   position: fixed;
 
   top: 0;
@@ -44,7 +41,7 @@ export default {
   background: black;
   padding: 20px 40px 20px 40px;
   color: white;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Links inside the navbar */
@@ -97,7 +94,7 @@ export default {
   position: absolute;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 2;
   animation: growDown 500ms ease-in-out forwards;
   transform-origin: top center;
 }
