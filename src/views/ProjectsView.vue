@@ -28,7 +28,6 @@
           justify-content: center;
           margin-left: 5%;
           margin-right: 5%;
-          margin-top: 5%;
         "
       >
         <source :src="video_in_modal.link" type="video/mp4" />

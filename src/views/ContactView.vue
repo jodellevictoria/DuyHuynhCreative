@@ -7,26 +7,32 @@
     style="
       height: 100vh;
       width: 100%;
-      padding-top: 90px;
-      padding-left: 50px;
+      padding-top: 10%;
+      padding-left: 15%;
+      padding-right: 15%;
       animation: fadeInAnimation ease 1s;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
     "
   >
-    <h2>Contact</h2>
     <div style="display: flex">
-      <div style="width: 60%; padding: 30px">
-        <h3 style="color: white; font-size: 50px">Fill the form to contact</h3>
-        <p style="color: white">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-          a galley of type and scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting, remaining essentially
-          unchanged. It was popularised in the 1960s
-        </p>
+      <div style="width: 55%">
+        <h2 style="font-family: Deuterium; font-weight: 500">Let's connect</h2>
+        <br />
+        <div style="padding-left: 30px; padding-right: 100px">
+          <p style="color: white; font-family: Deuterium">
+            I’m here to bring your vision to life. <br /><br />
+            Whether you’re inquiring for a few questions, or you’re ready to start your next big
+            project, I’d love to meet and hear from you.
+          </p>
+          <br />
+          <p style="color: white; font-family: Deuterium">
+            Have a specific inquiry or want to request a quote?<br />
+            Fill out the form, and I will get back to you as soon as possible.
+          </p>
+        </div>
       </div>
-      <div>
+      <div style="width: 40%">
         <form target="_blank" action="https://formsubmit.co/vjctoriaa@gmail.com" method="POST">
           <div style="display: flex; flex-direction: column; gap: 20px">
             <input type="text" name="name" placeholder="Full Name" required />
@@ -43,7 +49,7 @@
 <style>
 form {
   box-sizing: border-box;
-  width: 400px;
+  font-family: 'Manrope';
 
   input {
     background-color: #212121;
@@ -51,9 +57,10 @@ form {
     border: 0;
     color: #eee;
     font-size: 18px;
-    height: 24px;
+    height: 30px;
     outline: 0;
     padding: 10px;
+    font-family: 'Manrope';
   }
 
   .submit {
@@ -84,19 +91,7 @@ form {
     outline: 0;
     padding: 4px 20px 0;
     resize: none;
-    font-family:
-      Inter,
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      'Fira Sans',
-      'Droid Sans',
-      'Helvetica Neue',
-      sans-serif;
+    font-family: 'Manrope';
   }
 
   .submit:active {

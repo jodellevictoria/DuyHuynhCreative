@@ -1,11 +1,14 @@
 <template>
   <div class="navigator">
     <span>
-      <b><RouterLink to="/">Duy Huynh</RouterLink></b>
+      <b><RouterLink to="/">Duy Huynh Creative</RouterLink></b>
     </span>
     <div class="v-tabs-bar">
       <button class="dropbtn">
-        <RouterLink to="/#reel">Home</RouterLink>
+        <RouterLink to="/">Home</RouterLink>
+      </button>
+      <button class="dropbtn">
+        <RouterLink to="/about">About</RouterLink>
       </button>
       <div class="dropdown">
         <button class="dropbtn"><RouterLink to="/projects">Projects</RouterLink></button>
@@ -15,6 +18,7 @@
           <RouterLink to="/projects" v-scroll-to="'#brandings'">Brand Content</RouterLink>
         </div>
       </div>
+
       <button class="dropbtn">
         <RouterLink to="/contact">Contact</RouterLink>
       </button>
