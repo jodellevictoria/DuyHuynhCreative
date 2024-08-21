@@ -4,8 +4,9 @@
       <div
         style="
           background-color: black;
-          height: 100vh;
-          width: 100vw;
+          top: 0px;
+          height: 120vh;
+          width: 120vw;
           opacity: 0.7;
           z-index: 3;
           position: fixed;
@@ -72,7 +73,7 @@
             @click="watch_video(video)"
           >
             <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link" type="video/mp4" />
+              <source :src="video.link + '#t=10,50'" type="video/mp4" />
             </video>
             <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
             <span class="project_title">{{ video.name }}</span>
@@ -89,7 +90,7 @@
             @click="watch_video(video)"
           >
             <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link" type="video/mp4" />
+              <source :src="video.link + '#t=10,50'" type="video/mp4" />
             </video>
             <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
             <span class="project_title">{{ video.name }}</span>
@@ -106,7 +107,7 @@
             @click="watch_video(video)"
           >
             <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link" type="video/mp4" />
+              <source :src="video.link + '#t=10,50'" type="video/mp4" />
             </video>
             <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
             <span class="project_title">{{ video.name }}</span>
@@ -248,14 +249,14 @@ const branding_videos = [
 
 .video_player {
   position: fixed;
-  width: 90%;
+  width: auto;
   height: 90%;
   opacity: 1;
   z-index: 4;
   display: flex;
   justify-content: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .full-width-container {
@@ -280,9 +281,9 @@ const branding_videos = [
   overflow: hidden;
 
   .grayscale {
-    filter: grayscale(0.25);
-    -webkit-filter: grayscale(0.25);
-    filter: grayscale(25%);
+    filter: grayscale(0.4);
+    -webkit-filter: grayscale(0.4);
+    filter: grayscale(40%);
     transition: all 1s ease;
   }
 
@@ -322,6 +323,7 @@ const branding_videos = [
   font-family: Deuterium;
   font-weight: 500;
   writing-mode: vertical-lr;
+  text-shadow: #000 1px 0 10px;
 }
 @keyframes fadeInAnimation {
   0% {
@@ -466,6 +468,7 @@ const branding_videos = [
     font-family: Deuterium;
     font-weight: 500; */
     text-align: center;
+    font-size: 35px;
     writing-mode: horizontal-tb;
   }
   .project_type {
