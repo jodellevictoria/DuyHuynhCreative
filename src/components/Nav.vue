@@ -11,7 +11,7 @@
       <button class="dropbtn">
         <RouterLink to="/about">About</RouterLink>
       </button>
-      <div class="dropdown">
+      <div class="dropdown desktop">
         <button class="dropbtn">
           <RouterLink to="/projects">Projects</RouterLink>
         </button>
@@ -21,6 +21,9 @@
           <RouterLink to="/projects" v-scroll-to="'#brandings'">Brand Content</RouterLink>
         </div>
       </div>
+      <button class="dropbtn mobile">
+        <RouterLink to="/projects">Projects</RouterLink>
+      </button>
       <button class="dropbtn">
         <RouterLink to="/contact">Contact</RouterLink>
       </button>
@@ -145,6 +148,14 @@ export default {
   gap: 20px;
 }
 
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .hamburger-menu {
     display: block;
@@ -173,6 +184,14 @@ export default {
 
   .dropdown-content.show {
     display: flex;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
   }
 }
 </style>
