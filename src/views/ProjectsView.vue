@@ -13,23 +13,7 @@
         "
         @click="stop_watching"
       ></div>
-      <video
-        id="videoplayer"
-        ref="videoplayer"
-        controls
-        autoplay
-        style="
-          position: fixed;
-          width: 90%;
-          height: 90%;
-          opacity: 1;
-          z-index: 4;
-          display: flex;
-          justify-content: center;
-          margin-left: 5%;
-          margin-right: 5%;
-        "
-      >
+      <video id="videoplayer" ref="videoplayer" controls autoplay class="video_player">
         <source :src="video_in_modal.link" type="video/mp4" />
       </video>
       <!-- <video muted autoplay class="vid_player">
@@ -79,7 +63,7 @@
         </div>
       </div>
       <div id="sports" ref="sports" class="project_type">
-        <h2>Sports</h2>
+        <h2 class="type_title">Sports</h2>
         <div class="video_grid">
           <div
             v-for="(video, index) in sports_videos"
@@ -96,7 +80,7 @@
         </div>
       </div>
       <div id="products" ref="products" class="project_type">
-        <h2>Products</h2>
+        <h2 class="type_title">Products</h2>
         <div class="video_grid">
           <div
             v-for="(video, index) in product_videos"
@@ -113,7 +97,7 @@
         </div>
       </div>
       <div id="branding" ref="branding" class="project_type">
-        <h2>Brand Content</h2>
+        <h2 class="type_title">Brand Content</h2>
         <div class="video_grid">
           <div
             v-for="(video, index) in branding_videos"
@@ -262,11 +246,24 @@ const branding_videos = [
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+.video_player {
+  position: fixed;
+  width: 90%;
+  height: 90%;
+  opacity: 1;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 .full-width-container {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   display: flex;
+  flex-direction: row;
   max-width: 100vw;
   height: 100vh; /* Full viewport height */
   /*justify-content: space-around;*/
@@ -335,18 +332,20 @@ const branding_videos = [
   }
 }
 .project_type {
+  padding-left: 20px;
+  padding-right: 20px;
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   overflow-y: none;
-  overflow-x: scroll;
-
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none;
 
   padding-top: 50px;
   padding-bottom: 50px;
   color: white;
+
+  .type_title {
+    text-align: left;
+  }
 
   h2 {
     font-size: 70px;
@@ -355,6 +354,9 @@ const branding_videos = [
   }
 
   .video_grid {
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
     display: flex;
     /* padding-left: auto;
     padding-right: auto; */
@@ -425,5 +427,63 @@ const branding_videos = [
 }
 .invisible {
   visibility: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .video_player {
+    position: fixed;
+    width: 90%;
+    height: auto;
+    opacity: 1;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .full-width-container {
+    flex-direction: column;
+    max-width: 100%;
+    /* height: 100vh;
+    align-items: center; */
+  }
+
+  .inner-div {
+    position: relative;
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .text {
+    /* position: absolute;
+    z-index: 1;
+    font-size: 60px;
+    color: white;
+    font-family: Deuterium;
+    font-weight: 500; */
+    text-align: center;
+    writing-mode: horizontal-tb;
+  }
+  .project_type {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    h2 {
+      font-size: 50px;
+      font-weight: 500;
+      font-family: Deuterium;
+    }
+    .video_grid {
+      .video_block {
+        video {
+          max-height: 200px;
+        }
+      }
+    }
+  }
 }
 </style>

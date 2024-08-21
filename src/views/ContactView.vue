@@ -1,25 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div
-    id="contact"
-    ref="contact"
-    style="
-      height: 100vh;
-      width: 100%;
-      padding-top: 10%;
-      padding-left: 15%;
-      padding-right: 15%;
-      animation: fadeInAnimation ease 1s;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-    "
-  >
-    <div style="display: flex">
-      <div style="width: 55%">
-        <h2 style="font-family: Deuterium; font-weight: 500">Let's connect</h2>
+  <div id="contact" ref="contact" class="contact_container">
+    <div class="contact_body">
+      <div class="form_description">
+        <h2>Let's connect</h2>
         <br />
-        <div style="padding-left: 30px; padding-right: 100px">
+        <div class="desc_text">
           <p style="color: white; font-family: Deuterium">
             I’m here to bring your vision to life. <br /><br />
             Whether you’re inquiring for a few questions, or you’re ready to start your next big
@@ -32,7 +19,7 @@
           </p>
         </div>
       </div>
-      <div style="width: 40%">
+      <div class="contact_form">
         <form target="_blank" action="https://formsubmit.co/vjctoriaa@gmail.com" method="POST">
           <div style="display: flex; flex-direction: column; gap: 20px">
             <input type="text" name="name" placeholder="Full Name" required />
@@ -96,6 +83,74 @@ form {
 
   .submit:active {
     background-color: #06b;
+  }
+}
+
+.contact_container {
+  height: 100vh;
+  width: 100%;
+  padding-top: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.contact_body {
+  display: flex;
+  flex-direction: row;
+}
+
+.form_description {
+  width: 55%;
+
+  h2 {
+    font-family: Deuterium;
+    font-weight: 500;
+    text-align: left;
+    font-size: 70px;
+  }
+
+  .desc_text {
+    padding-left: 30px;
+    padding-right: 100px;
+  }
+}
+
+.contact_form {
+  width: 40%;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .contact_container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .contact_body {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .form_description {
+    width: 100%;
+    height: auto;
+    h2 {
+      text-align: center;
+      font-size: 45px;
+    }
+
+    .desc_text {
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 20px;
+    }
+  }
+
+  .contact_form {
+    width: 100%;
+    margin-bottom: 50px;
   }
 }
 </style>
