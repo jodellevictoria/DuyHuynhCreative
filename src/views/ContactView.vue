@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="contact_form">
-        <form target="_blank" action="https://formsubmit.co/vjctoriaa@gmail.com" method="POST">
+        <form target="_blank" action="https://formsubmit.co/d-huynh@outlook.com" method="POST">
           <div style="display: flex; flex-direction: column; gap: 20px">
             <input type="text" name="name" placeholder="Full Name" required />
             <input type="email" name="email" placeholder="Email Address" required />
