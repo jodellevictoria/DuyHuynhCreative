@@ -22,47 +22,6 @@
       </video> -->
     </div>
     <div class="projects">
-      <div class="full-width-container">
-        <div class="inner-div" @click="this.$refs.sports.scrollIntoView({ behavior: 'smooth' })">
-          <video
-            id="sports_bg"
-            muted
-            loop
-            onmouseover="this.play()"
-            onmouseout="this.pause()"
-            class="grayscale"
-          >
-            <source src="/src/assets/SportsBGAnim.mov" type="video/mp4" />
-          </video>
-          <div class="text">SPORTS</div>
-        </div>
-        <div class="inner-div" @click="this.$refs.products.scrollIntoView({ behavior: 'smooth' })">
-          <video
-            id="sports_bg"
-            muted
-            loop
-            onmouseover="this.play()"
-            onmouseout="this.pause()"
-            class="grayscale"
-          >
-            <source src="/src/assets/ProductBGAnim.mov" type="video/mp4" />
-          </video>
-          <div class="text">PRODUCTS</div>
-        </div>
-        <div class="inner-div" @click="this.$refs.branding.scrollIntoView({ behavior: 'smooth' })">
-          <video
-            id="sports_bg"
-            muted
-            loop
-            onmouseover="this.play()"
-            onmouseout="this.pause()"
-            class="grayscale"
-          >
-            <source src="/src/assets/BrandingBGAnim.mov" type="video/mp4" />
-          </video>
-          <div class="text">BRAND CONTENT</div>
-        </div>
-      </div>
       <div id="sports" ref="sports" class="project_type">
         <h2 class="type_title">Sports</h2>
         <div class="video_grid">
@@ -444,7 +403,7 @@ const branding_videos = [
     margin-right: 5%;
   }
   .full-width-container {
-display:none;
+    display: none;
     flex-direction: column;
     max-width: 100%;
     /* height: 100vh;
