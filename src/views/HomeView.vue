@@ -9,6 +9,18 @@ const toggleSound = () => {
   if (videoRef.value) {
     isMuted.value = !isMuted.value
     videoRef.value.muted = isMuted.value
+    videoRef.value.volume = 0.2
+  }
+}
+
+const togglePause = () => {
+  if (videoRef.value) {
+    console.log(videoRef.value.paused)
+    if (videoRef.value.paused) {
+      videoRef.value.play()
+    } else {
+      videoRef.value.pause()
+    }
   }
 }
 
@@ -22,7 +34,15 @@ const onLoadedData = () => {
   <div>
     <div class="spinner"></div>
     <div id="reel" ref="reel">
-      <video autoplay muted loop id="myVideo" ref="videoRef" @loadeddata="onLoadedData">
+      <video
+        autoplay
+        muted
+        loop
+        id="myVideo"
+        ref="videoRef"
+        @loadeddata="onLoadedData"
+        @click="togglePause"
+      >
         <source
           src="https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/DemoReel.mp4?alt=media&token=5e322a23-a1a3-4b13-b1a6-3d6b6ed09a2d"
           type="video/mp4"
@@ -38,7 +58,7 @@ const onLoadedData = () => {
             fill="#FFFFFF"
           >
             <path
-              d="M280-360v-240h160l200-200v640L440-360H280Zm80-80h114l86 86v-252l-86 86H360v80Zm100-40Z"
+              d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320ZM400-606l-86 86H200v80h114l86 86v-252ZM300-480Z"
             />
           </svg>
         </div>
@@ -51,7 +71,7 @@ const onLoadedData = () => {
             fill="#FFFFFF"
           >
             <path
-              d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320ZM400-606l-86 86H200v80h114l86 86v-252ZM300-480Z"
+              d="M280-360v-240h160l200-200v640L440-360H280Zm80-80h114l86 86v-252l-86 86H360v80Zm100-40Z"
             />
           </svg>
         </div>
@@ -90,7 +110,7 @@ const onLoadedData = () => {
 }
 
 .sound-toggle {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -121,6 +141,7 @@ const onLoadedData = () => {
   z-index: 0;
   top: 64px;
   height: 100vh;
+  cursor: pointer;
 }
 
 #myVideo {
