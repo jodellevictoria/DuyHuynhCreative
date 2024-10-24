@@ -32,8 +32,8 @@
             @click="watch_video(video)"
           >
             <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link + '#t=10,50'" type="video/mp4" />
-            </video>
+              <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
+            ><br />
             <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
             <span class="project_title">{{ video.name }}</span>
           </div>
@@ -49,8 +49,8 @@
             @click="watch_video(video)"
           >
             <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link + '#t=10,50'" type="video/mp4" />
-            </video>
+              <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
+            ><br />
             <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
             <span class="project_title">{{ video.name }}</span>
           </div>
@@ -66,8 +66,8 @@
             @click="watch_video(video)"
           >
             <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link + '#t=10,50'" type="video/mp4" />
-            </video>
+              <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
+            ><br />
             <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
             <span class="project_title">{{ video.name }}</span>
           </div>
@@ -292,6 +292,11 @@ const branding_videos = [
     opacity: 1;
   }
 }
+.projects {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .project_type {
   padding-left: 20px;
   padding-right: 20px;
@@ -315,13 +320,17 @@ const branding_videos = [
   }
 
   .video_grid {
-    overflow-x: scroll;
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none;
-    display: flex;
+    /* overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none; */
+    display: grid;
     /* padding-left: auto;
     padding-right: auto; */
-    gap: 20px;
+    gap: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
 
     /* .project_title:hover {
       font-weight: bold;
@@ -335,8 +344,10 @@ const branding_videos = [
         filter: grayscale(40%);
       } */
 
+      padding: 10px;
+
       video {
-        max-height: 300px;
+        max-height: 250px;
         filter: grayscale(0.4);
         -webkit-filter: grayscale(0.4);
         filter: grayscale(40%);
