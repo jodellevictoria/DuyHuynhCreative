@@ -293,9 +293,12 @@ const branding_videos = [
   }
 }
 .projects {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .project_type {
   padding-left: 20px;
@@ -347,7 +350,7 @@ const branding_videos = [
       padding: 10px;
 
       video {
-        max-height: 250px;
+        max-height: 280px;
         filter: grayscale(0.4);
         -webkit-filter: grayscale(0.4);
         filter: grayscale(40%);
