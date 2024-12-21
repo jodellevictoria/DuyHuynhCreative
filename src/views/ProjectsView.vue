@@ -98,6 +98,10 @@ function stop_watching() {
 }
 
 function watch_video(video: any) {
+  if (window.innerWidth <= 767) {
+    // Prevent modal on mobile
+    return
+  }
   video_in_modal.value = video
   modal_active.value = true
   // nextTick(() => {
@@ -201,7 +205,7 @@ const branding_videos = [
 </script>
 
 <style>
-/* Global Reset */
+/* Reset and Global Fix */
 * {
   margin: 0;
   padding: 0;
@@ -213,17 +217,20 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Ensure vertical scrolling is smooth */
   margin: 0;
   padding: 0;
 }
 
 /* Videos Container */
 .videos {
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex; /* Align children in a row */
   gap: 1rem; /* Add spacing between videos */
   overflow-x: auto; /* Enable horizontal scrolling */
-  padding: 1rem; /* Add padding for better spacing */
-  scrollbar-width: thin; /* Thin scrollbar for Firefox */
+  padding: 1rem;
+  scrollbar-width: thin; /* Thin scrollbar */
   scroll-snap-type: x mandatory; /* Enable snapping for smooth scrolling */
 }
 
@@ -233,6 +240,7 @@ body {
 
 .videos::-webkit-scrollbar-thumb {
   background: #888; /* Scrollbar color */
+  border-radius: 4px; /* Rounded scrollbar */
 }
 
 .videos::-webkit-scrollbar-thumb:hover {
@@ -242,26 +250,22 @@ body {
 /* Individual Video Block */
 .video {
   flex: 0 0 auto; /* Prevent shrinking */
-  width: 45%; /* Default width for videos (mobile-friendly) */
+  width: 95%; /* Default width for videos on mobile */
   scroll-snap-align: start; /* Align items for snapping */
 }
 
 .video video {
   display: block; /* Prevent extra inline spacing */
   width: 100%; /* Ensure videos fit within the container */
+  border-radius: 8px; /* Optional: Add rounded corners */
   margin: 0;
-}
-
-.projects {
-  padding-top: 10px;
-  padding-bottom: 40px;
 }
 
 .project_title {
   font-family: 'Manrope', sans-serif;
   color: white;
   text-align: center;
-  font-size: 0.9rem; /* Smaller font for mobile */
+  font-size: 1.2rem; /* Adjusted font size for better readability */
   margin-top: 0.5rem;
 }
 
@@ -278,6 +282,17 @@ body {
   justify-content: center;
   overflow: hidden;
   margin: 0 auto;
+}
+
+/* White Space Fix for Modal */
+.modal_background {
+  height: 100vh; /* Ensure it fills the viewport exactly */
+  width: 100vw;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden; /* Prevent scrolling inside modal */
 }
 
 /* Responsive Adjustments */
@@ -311,11 +326,11 @@ body {
 
 @media (max-width: 767px) {
   .videos {
-    padding: 0 1rem; /* Avoid extra horizontal spacing */
+    padding: 0 0.5rem; /* Reduce padding to make more room for videos */
   }
 
   .video {
-    width: calc(50% - 1rem); /* Adjust for mobile (2 videos per row) */
+    width: 100%; /* Videos take up the full width of the container */
   }
 
   .video video {
@@ -323,50 +338,8 @@ body {
   }
 
   .project_title {
-    font-size: 0.8rem; /* Smaller font for mobile screens */
+    font-size: 1.1rem; /* Slightly larger font size for mobile titles */
   }
-}
-
-/* Utility Classes */
-.project_type {
-  padding: 20px;
-  overflow-y: none;
-  color: white;
-}
-
-.project_type h2 {
-  text-align: left;
-  font-size: 2rem;
-  font-family: 'Manrope', sans-serif;
-  font-weight: bold;
-}
-
-.project_type .video_grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.project_type .video_grid .video_block video {
-  max-height: 200px; /* Limit video height */
-  width: 100%;
-  filter: grayscale(0.4);
-  transition: filter 1s ease;
-}
-
-.project_type .video_grid .video_block:hover video {
-  filter: grayscale(0);
-}
-
-.project_type .video_grid .project_title {
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-  color: white;
-}
-
-.project_type .video_grid .video_block {
-  text-align: center;
 }
 
 /* Footer (Optional Styling) */
