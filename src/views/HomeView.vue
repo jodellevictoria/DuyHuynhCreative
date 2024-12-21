@@ -13,16 +13,15 @@ const toggleSound = () => {
   }
 }
 
-const togglePause = () => {
-  if (videoRef.value) {
-    console.log(videoRef.value.paused)
-    if (videoRef.value.paused) {
-      videoRef.value.play()
-    } else {
-      videoRef.value.pause()
-    }
-  }
-}
+// const togglePause = () => {
+//   if (videoRef.value) {
+//     if (videoRef.value.paused) {
+//       videoRef.value.play()
+//     } else {
+//       videoRef.value.pause()
+//     }
+//   }
+// }
 
 // Update the isLoading ref when the video metadata is loaded
 const onLoadedData = () => {
@@ -34,15 +33,7 @@ const onLoadedData = () => {
   <div>
     <div class="spinner"></div>
     <div id="reel" ref="reel">
-      <video
-        autoplay
-        muted
-        loop
-        id="myVideo"
-        ref="videoRef"
-        @loadeddata="onLoadedData"
-        @click="togglePause"
-      >
+      <video autoplay muted loop id="myVideo" ref="videoRef" @loadeddata="onLoadedData">
         <source
           src="https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/DemoReel.mp4?alt=media&token=5e322a23-a1a3-4b13-b1a6-3d6b6ed09a2d"
           type="video/mp4"
@@ -141,7 +132,6 @@ const onLoadedData = () => {
   z-index: 0;
   top: 64px;
   height: 100vh;
-  cursor: pointer;
 }
 
 #myVideo {

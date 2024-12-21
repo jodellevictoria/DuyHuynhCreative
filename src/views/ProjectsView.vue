@@ -22,55 +22,52 @@
       </video> -->
     </div>
     <div class="projects">
-      <div id="sports" ref="sports" class="project_type">
-        <h2 class="type_title">Sports</h2>
-        <div class="video_grid">
-          <div
-            v-for="(video, index) in sports_videos"
-            v-bind:key="index"
-            class="video_block"
-            @click="watch_video(video)"
-          >
-            <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
-            ><br />
-            <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
-            <span class="project_title">{{ video.name }}</span>
-          </div>
+      <h2 class="type_title">Sports</h2>
+
+      <div class="videos">
+        <div
+          v-for="(video, index) in sports_videos"
+          v-bind:key="index"
+          class="video"
+          @click="watch_video(video)"
+        >
+          <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
+            <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
+          ><br />
+          <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
+          <span class="project_title">{{ video.name }}</span>
         </div>
       </div>
-      <div id="products" ref="products" class="project_type">
-        <h2 class="type_title">Products</h2>
-        <div class="video_grid">
-          <div
-            v-for="(video, index) in product_videos"
-            v-bind:key="index"
-            class="video_block"
-            @click="watch_video(video)"
-          >
-            <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
-            ><br />
-            <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
-            <span class="project_title">{{ video.name }}</span>
-          </div>
+
+      <h2 class="type_title">Products</h2>
+      <div class="videos">
+        <div
+          v-for="(video, index) in product_videos"
+          v-bind:key="index"
+          class="video"
+          @click="watch_video(video)"
+        >
+          <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
+            <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
+          ><br />
+          <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
+          <span class="project_title">{{ video.name }}</span>
         </div>
       </div>
-      <div id="branding" ref="branding" class="project_type">
-        <h2 class="type_title">Brand Content</h2>
-        <div class="video_grid">
-          <div
-            v-for="(video, index) in branding_videos"
-            v-bind:key="index"
-            class="video_block"
-            @click="watch_video(video)"
-          >
-            <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
-              <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
-            ><br />
-            <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
-            <span class="project_title">{{ video.name }}</span>
-          </div>
+
+      <h2 class="type_title">Brand Content</h2>
+      <div class="videos">
+        <div
+          v-for="(video, index) in branding_videos"
+          v-bind:key="index"
+          class="video"
+          @click="watch_video(video)"
+        >
+          <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
+            <source :src="video.link + '#t=10,50'" type="video/mp4" /></video
+          ><br />
+          <!-- <img style="max-width: 650px" :src="`src/assets${video.src}`" /> -->
+          <span class="project_title">{{ video.name }}</span>
         </div>
       </div>
     </div>
@@ -204,263 +201,183 @@ const branding_videos = [
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.video_player {
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: 0;
+  padding: 0;
+}
+
+/* Videos Container */
+.videos {
+  display: flex; /* Align children in a row */
+  gap: 1rem; /* Add spacing between videos */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 1rem; /* Add padding for better spacing */
+  scrollbar-width: thin; /* Thin scrollbar for Firefox */
+  scroll-snap-type: x mandatory; /* Enable snapping for smooth scrolling */
+}
+
+.videos::-webkit-scrollbar {
+  height: 8px; /* Customize scrollbar height for WebKit browsers */
+}
+
+.videos::-webkit-scrollbar-thumb {
+  background: #888; /* Scrollbar color */
+}
+
+.videos::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Hover color for scrollbar */
+}
+
+/* Individual Video Block */
+.video {
+  flex: 0 0 auto; /* Prevent shrinking */
+  width: 45%; /* Default width for videos (mobile-friendly) */
+  scroll-snap-align: start; /* Align items for snapping */
+}
+
+.video video {
+  display: block; /* Prevent extra inline spacing */
+  width: 100%; /* Ensure videos fit within the container */
+  margin: 0;
+}
+
+.projects {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.project_title {
+  font-family: 'Manrope', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem; /* Smaller font for mobile */
+  margin-top: 0.5rem;
+}
+
+/* Modal Styles */
+.video_player,
+.modal_background {
   position: fixed;
   width: auto;
   height: 90%;
-  opacity: 1;
+  max-height: 100vh; /* Ensure modal fits within the viewport */
   z-index: 4;
+  opacity: 1;
   display: flex;
   justify-content: center;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.full-width-container {
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  display: flex;
-  flex-direction: row;
-  max-width: 100vw;
-  height: 100vh; /* Full viewport height */
-  /*justify-content: space-around;*/
-  align-items: center;
-}
-
-.inner-div {
-  position: relative;
-  width: 33.33%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
+  margin: 0 auto;
+}
 
-  .grayscale {
-    filter: grayscale(0.4);
-    -webkit-filter: grayscale(0.4);
-    filter: grayscale(40%);
-    transition: all 1s ease;
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .video {
+    width: 300px; /* Larger width for tablet screens */
   }
 
-  .grayscale:hover {
-    transition: all 1s ease;
-    /*animation: recolor ease 5s;*/
-    filter: grayscale(0);
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0%);
+  .videos {
+    padding: 1rem 2rem; /* Add more padding for tablets */
+  }
+
+  .project_title {
+    font-size: 1rem; /* Adjust title size for tablet */
   }
 }
 
-.inner-div:hover {
-  cursor: pointer;
-}
-
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.inner-div:hover .background-video {
-  opacity: 1;
-}
-
-.text {
-  position: absolute;
-  z-index: 1;
-  font-size: 60px;
-  color: white;
-  font-family: Deuterium;
-  font-weight: 500;
-  writing-mode: vertical-lr;
-  text-shadow: #000 1px 0 10px;
-}
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
+@media (min-width: 1024px) {
+  .video {
+    width: 400px; /* Larger width for desktop screens */
   }
-  100% {
-    opacity: 1;
+
+  .videos {
+    gap: 1.5rem; /* More space between videos */
+  }
+
+  .project_title {
+    font-size: 1.2rem; /* Slightly larger titles for desktop */
   }
 }
-.projects {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 10%;
-  margin-right: 10%;
+
+@media (max-width: 767px) {
+  .videos {
+    padding: 0 1rem; /* Avoid extra horizontal spacing */
+  }
+
+  .video {
+    width: calc(50% - 1rem); /* Adjust for mobile (2 videos per row) */
+  }
+
+  .video video {
+    width: 100%; /* Ensure video fits the container */
+  }
+
+  .project_title {
+    font-size: 0.8rem; /* Smaller font for mobile screens */
+  }
 }
+
+/* Utility Classes */
 .project_type {
-  padding-left: 20px;
-  padding-right: 20px;
-  animation: fadeInAnimation ease 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  padding: 20px;
   overflow-y: none;
-
-  padding-top: 50px;
-  padding-bottom: 50px;
   color: white;
-
-  .type_title {
-    text-align: left;
-  }
-
-  h2 {
-    font-size: 70px;
-    font-weight: 500;
-    font-family: Deuterium;
-  }
-
-  .video_grid {
-    /* overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none; */
-    display: grid;
-    /* padding-left: auto;
-    padding-right: auto; */
-    gap: 10px;
-
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-
-    /* .project_title:hover {
-      font-weight: bold;
-      cursor: pointer;
-    } */
-
-    .video_block {
-      /* img {
-        filter: grayscale(0.4);
-        -webkit-filter: grayscale(0.4);
-        filter: grayscale(40%);
-      } */
-
-      padding: 10px;
-
-      video {
-        max-height: 300px;
-        filter: grayscale(0.4);
-        -webkit-filter: grayscale(0.4);
-        filter: grayscale(40%);
-        transition: all 1s ease;
-      }
-
-      .project_title {
-        font-family: 'Manrope';
-      }
-    }
-
-    .video_block:hover {
-      cursor: pointer;
-      video {
-        transition: all 1s ease;
-
-        filter: grayscale(0);
-        -webkit-filter: grayscale(0);
-        filter: grayscale(0%);
-      }
-      .project_title {
-        font-weight: bold;
-      }
-    }
-  }
 }
 
-.project_type::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+.project_type h2 {
+  text-align: left;
+  font-size: 2rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
 }
 
-.modal_background {
-  position: fixed; /* Stay in place front is invalid - may break your css so removed */
-  z-index: 4;
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
+.project_type .video_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.vid_player {
-  width: 90%;
-  height: 90%;
-  z-index: 5;
-  opacity: 1;
+.project_type .video_grid .video_block video {
+  max-height: 200px; /* Limit video height */
+  width: 100%;
+  filter: grayscale(0.4);
+  transition: filter 1s ease;
 }
 
-.visible {
-  visibility: visible;
-}
-.invisible {
-  visibility: hidden;
+.project_type .video_grid .video_block:hover video {
+  filter: grayscale(0);
 }
 
-@media screen and (max-width: 767px) {
-  .video_player {
-    position: fixed;
-    width: 90%;
-    height: auto;
-    opacity: 1;
-    z-index: 4;
-    display: flex;
-    justify-content: center;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  .full-width-container {
-    display: none;
-    flex-direction: column;
-    max-width: 100%;
-    /* height: 100vh;
-    align-items: center; */
-  }
+.project_type .video_grid .project_title {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+}
 
-  .inner-div {
-    position: relative;
-    width: 100%;
-    height: 33.33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
+.project_type .video_grid .video_block {
+  text-align: center;
+}
 
-  .text {
-    /* position: absolute;
-    z-index: 1;
-    font-size: 60px;
-    color: white;
-    font-family: Deuterium;
-    font-weight: 500; */
-    text-align: center;
-    font-size: 35px;
-    writing-mode: horizontal-tb;
-  }
-  .project_type {
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    h2 {
-      font-size: 50px;
-      font-weight: 500;
-      font-family: Deuterium;
-    }
-    .video_grid {
-      .video_block {
-        video {
-          max-height: 200px;
-        }
-      }
-    }
-  }
+/* Footer (Optional Styling) */
+footer {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
 }
 </style>
