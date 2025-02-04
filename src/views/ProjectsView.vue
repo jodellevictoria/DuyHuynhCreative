@@ -140,6 +140,12 @@ const sports_videos = [
     src: '/Sports/CCYAA2023.png',
     link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2F240606%20-%20CCYAA_CC_Hilites.mp4?alt=media&token=adbc3a20-6467-4573-a7c8-1db83d08b44a',
     roles: ['', '']
+  },
+  {
+    name: 'Raptors 905 Lunar New Year',
+    src: '/Sports/CCYAA2023.png',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2F250130-169-Raptors%20905%20LNY%20game%20jerseys.mp4?alt=media&token=41c30ddb-1560-45d7-890b-6187b0812753',
+    roles: ['', '']
   }
 ]
 
