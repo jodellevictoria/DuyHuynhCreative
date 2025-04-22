@@ -136,7 +136,7 @@ const sports_videos = [
     roles: ['', '']
   },
   {
-    name: 'CCYAA Celebrity Classic 2023',
+    name: 'CCYAA Celebrity Classic',
     src: '/Sports/CCYAA2023.png',
     link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2F240606%20-%20CCYAA_CC_Hilites.mp4?alt=media&token=adbc3a20-6467-4573-a7c8-1db83d08b44a',
     roles: ['', '']
