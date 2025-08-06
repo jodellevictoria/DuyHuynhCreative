@@ -33,8 +33,8 @@
           Proficient in shooting videography, post production, and providing clientele with high
           production value content, I aim to create your impactful and engaging storytelling,
           resonating with audiences from small to large scales. Projects are approached with a
-          nuanced and unique perspective, ensuring that each piece of content is both strategically
-          aligned with client goals and are visually compelling.
+          nuanced and unique perspective, ensuring that each piece of content is both visually
+          compelling and strategically aligned with client goals.
         </p>
         <br />
         <p>
