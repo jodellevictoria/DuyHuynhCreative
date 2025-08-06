@@ -68,23 +68,25 @@ const onLoadedData = () => {
         </div>
       </button>
       <div class="bio">
-        <h2>Duy Huynh Creative</h2>
+        <h2>Hi! I’m Duy.</h2>
         <br />
         <p>
-          I’m a detail-oriented video production specialist and creative with years of experience in
-          producing high-quality content for various clientele, from professional sports teams,
-          weddings, to the travel aviation industry across the country.
+          I’m a video production creative with years of experience in producing high-quality content
+          for varied clientele, from professional sports teams, social media content agencies,
+          special events, to the travel aviation industry across the country.
         </p>
+        <br />
         <p>
-          Proficient in videography, editing, color correction, and providing clientele with high
-          production value content, I excel in creating impactful and engaging storytelling that
-          resonate with audiences from small to large scales. My diverse skill set and background
-          enable me to approach projects with a nuanced and unique perspective, ensuring that each
-          piece of content is both strategically aligned with client goals and visually compelling.
+          Proficient in shooting videography, post production, and providing clientele with high
+          production value content, I aim to create your impactful and engaging storytelling,
+          resonating with audiences from small to large scales. Projects are approached with a
+          nuanced and unique perspective, ensuring that each piece of content is both strategically
+          aligned with client goals and are visually compelling.
         </p>
+        <br />
         <p>
-          I am passionate about building strong relationships with clients and dedicated to
-          delivering stories that provide a powerful voice and enhance brand presence.
+          Let’s build your unique and specialized content to deliver powerful stories and enhance
+          your brand presence.
         </p>
       </div>
     </div>
