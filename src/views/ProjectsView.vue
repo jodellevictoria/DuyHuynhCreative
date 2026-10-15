@@ -118,6 +118,12 @@ function watch_video(video: any) {
 // })
 const sports_videos = [
   {
+    name: '2026 Honda Indy',
+    src: '/Sports/HondaIndy2026.png',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2F260818-Honda%20Indy%20Saturday%20169.mp4?alt=media&token=f6941762-45fc-4d1a-968c-52807ba6673c',
+    roles: ['', '']
+  },
+  {
     name: 'TFC Jonathan Osorio Contract Extension',
     src: '/Sports/OsorioSigning.png',
     link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/sports%2F180829-MLS-FEA-OSO%20RE-SIGN%20v3%20(2020_09_29%2000_42_32%20UTC).mp4?alt=media&token=a948555a-854c-4512-ad8b-5aa7987c8870',
@@ -177,6 +183,12 @@ const product_videos = [
 ]
 
 const branding_videos = [
+  {
+    name: 'St-Catharines General Motors Sizzle',
+    src: '/Sports/CCYAA2023.png',
+    link: 'https://firebasestorage.googleapis.com/v0/b/duyhuynhportfolio.appspot.com/o/branding%2F261015-General%20Motors%20Sizzle%20v2.mp4?alt=media&token=bd022003-6c44-4954-aeae-246fb535bc8e',
+    roles: ['', '']
+  },
   {
     name: 'Air Canada Free Wifi',
     src: '/Sports/CCYAA2023.png',
